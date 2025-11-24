@@ -1,0 +1,214 @@
+/* General Page Styling */
+.box::before{
+    content: " ";
+    position: absolute;
+    width:100%;
+    height: 100%;
+    filter: drop-shadow(0 15px 50px #000);
+    border-radius: 20px;
+    animation: rotating 4s linear infinite;
+    animation-delay: -1s;
+}
+
+.box::after{
+    content: " ";
+    position: absolute;
+    inset: 4px;
+    background: #2d2d39;
+    border-radius: 15px;
+    border: 8px solid #25252b;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    min-height: 100vh;
+
+    /*  */
+    background-image: url(/Images/de36274c-04a9-493f-836f-1caf2c61703e_750x422.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    backdrop-filter: blur(10px);
+
+    overflow-x: hidden;
+}
+
+
+
+header{
+    background-color: rgb(75, 0, 130, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 30px 10px;
+    width: 100%;
+}
+header div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+header img{
+    height: 100px;
+}
+
+/* Login Container */
+.login-container {
+    background: rgba(255, 255, 255, 0.301);  /* chanage ransparenr */ 
+    backdrop-filter: blur(50px);
+    padding: 20px;
+    margin: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+:root {
+    --background-color: #f4f4f4;
+    --text-color: #000;
+    --container-bg: rgba(255, 255, 255, 0.301);
+    --button-bg: #003366;
+    --button-hover: #0055aa;
+    --progress-bar-color: #f70606;
+}
+
+/* Dark Theme */
+.dark-mode {
+    --background-color: #181818;
+    --text-color: #ffffff;
+    --container-bg: rgba(50, 50, 50, 0.7);
+    --button-bg: #f5eef2;
+    --button-hover: #f80505;
+    --progress-bar-color: #ffffff;
+}
+
+/* Apply Variables to Elements */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: all 0.4s ease-in-out;
+}
+@keyframes blinkShadow {
+    0% { box-shadow: 0px 0px 15px 5px rgba(255, 0, 0, 0.7); } 
+    50% { box-shadow: 0px 0px 15px 5px rgba(0, 0, 255, 0.7); }
+    100% { box-shadow: 0px 0px 15px 5px rgba(255, 0, 0, 0.7); }
+}
+
+
+.login-container {
+    background: rgba(255, 255, 255, 0.301);
+    backdrop-filter: blur(50px);
+    padding: 20px;
+    margin: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    animation: blinkShadow 1s infinite alternate; 
+}
+
+/* Button Styling */
+#theme-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--button-bg, #003366); /* Default color */
+    color: var(--text-color, #fff);
+    border: 2px solid #fff; /* Ensure visibility */
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure it appears on top */
+}
+
+#theme-toggle:hover {
+    background-color: var(--button-hover);
+    transform: scale(1.1);
+}
+
+button {
+    background-color: var(--button-bg);
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+
+/* Headings */
+h2 {
+    color: #003366;
+}
+/* Input Group */
+.input-group {
+    margin: 15px 25px;
+    text-align: left;
+}
+.input-group label {
+    display: block;
+    font-weight: bold;
+}
+.input-group input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    /* border: none; */
+    outline: none;
+    border-radius: 8px;
+    background-color: transparent;
+}
+.input-group input:focus{
+    outline: 1px solid #003366; 
+    border: none;
+}
+.input-group input::placeholder{
+    color: rgba(0, 0, 0, 0.39);
+}
+.input-group .register-link{
+    margin-top: 25px;
+}
+.input-group .register{
+    display: block;
+    text-align: end;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+
+/* Button */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0055aa;
+}
+/* Register Link */
+.register-link {
+    margin-top: 10px;
+}
+.register-link a {
+    color: #003366;
+    text-decoration: none;
+}
+.register-link a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIR Generation</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <header>
+        <div class="navbar header-container">
+            <img src="/Images/police_logo-removebg-preview.png" alt="Police Logo" class="logo">
+            <h1>FIR Generation System</h1>
+        </div>
+        <!-- <nav class="navbar">
+            <ul>
+                <li><a href="/">Home</a> </li>
+                <li><a href="/">About</a></li>
+                <li><a href="/promp-page.html">Services</a></li>
+            </ul>
+        </nav> -->
+        
+    </header>
+    <main>
+        <section class="definition">
+            <div class="container">
+                <div class="main">
+                    <h2>What is an FIR?</h2>
+                    <p>A First Information Report (FIR) is a written document prepared by the police when they receive information about the commission of a cognizable offense.</p>
+                    <p>It is the first step in the legal process of crime investigation.</p>
+                    <p>The FIR contains preliminary details about the crime, such as the date, time, place, and identity of the accused.</p>
+                    <p>The police use the FIR to investigate the crime.</p>
+                    <p>You can file an FIR for family disputes, commercial offenses, matrimonial disputes, corruption cases, medical malpractice cases, and more.</p>
+                    </div>
+                    <div class="image">
+                        <img src="/Images/Memphis-TN-Law-Firm.jpg" alt="">
+                    </div>
+            </div>
+        </section>
+        <section class="reasons">
+            <div class="container">
+                <div class="image">
+                    <img src="/Images/Memphis-TN-Law-Firm.jpg" alt="">
+                </div>
+                <div class="main">
+                    <h2>Why Should You File an FIR?</h2>
+                    <p>To report a crime and initiate an investigation.</p>
+                    <p>To ensure legal action against the offender.</p>
+                    <p>To safeguard your rights as a victim.</p>
+                    <p>To serve as legal proof in court proceedings.</p>
+                </div>
+            </div>
+        </section>
+        <section class="warning">
+            <div class="container">
+                <div class="main">
+                    <h2>⚠️ Warning: Do Not File a False FIR</h2>
+                    <p>Filing a false FIR is a criminal offense and is punishable under *Section 182 of the Indian Penal Code (IPC)*.</br>Any false report may lead to legal consequences, including fines or imprisonment.</p>
+                </div>
+            </div>
+        </section>
+        <section class="permission">
+            <div class="container">
+                <div class="main">
+                <h2>Do You Want to Continue?</h2>
+                <p>By proceeding, you confirm that the information you provide will be accurate and truthful.</p>
+                <div class="button-section">
+                <!-- <button onclick="proceed()" class="button">Yes, Continue</button>
+                <button onclick="exit()" class="button">No, Exit</button> -->
+                <a href="/login.html" class="button">Yes, Continue</a>
+                <a  class="button" onclick="exit()">No, Exit</a>
+                </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <p>&copy; 2025 FIR Generator | <span>Privacy Policy </span> | Terms of Use</p>
+        </div>
+    </footer>
+    <script >
+        function proceed() {
+        // alert("Redirecting to FIR Filing Page...");
+        window.location.href = "fir-form.html"; // Replace with your actual FIR form page
+    }
+
+    function exit() {
+        // alert("Exiting the FIR System.");
+        window.close(); // Closes the tab
+    }
+</script>
+</body>
+</html>

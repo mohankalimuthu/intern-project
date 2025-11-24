@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <header>
+        <div class="navbar header-container">
+            <img src="/Images/police_logo-removebg-preview.png" alt="Police Logo" class="logo">
+            <h1>FIR Generation System</h1>
+        </div>
+        <button id="theme-toggle">🌙</button>  
+    </header>
+    <div class="login-container">
+        <h2>User Login</h2>
+        <form onsubmit="return validateLogin()">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <div>
+                <input type="checkbox" id="check" onclick="togglePassword()"> Show Password
+           </div>
+           <div class="input-group">
+            <button type="submit" >Login</button>
+            <p class="register-link">Don't have an account? <a href="/register.html" class="register">Register here</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function togglePassword() {
+            var passwordField = document.getElementById("password");
+            passwordField.type = passwordField.type === "password" ? "text" : "password";
+        }
+
+        function validateLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "" || password === "") {
+                alert("Please enter both username and password.");
+                return false;
+            }
+
+            alert("Login successful! Redirecting...");
+            window.location.href = "/promp-page.html"; // Redirect to dashboard
+            return false; // Prevent form submission for demo
+        }
+    </script>
+    <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const themeToggle = document.getElementById("theme-toggle");
+                if (!themeToggle) {
+                    console.error("Theme toggle button not found.");
+                    return;
+                }
+        
+                const body = document.body;
+                
+                if (localStorage.getItem("theme") === "dark") {
+                    body.classList.add("dark-mode");
+                    themeToggle.innerHTML = "☀️"; // Sun icon for light mode
+                } else {
+                    body.classList.remove("dark-mode");
+                    themeToggle.innerHTML = "🌙"; // Moon icon for dark mode
+                }
+        
+                themeToggle.addEventListener("click", function () {
+                    if (body.classList.contains("dark-mode")) {
+                        body.classList.remove("dark-mode");
+                        localStorage.setItem("theme", "light");
+                        themeToggle.innerHTML = "🌙";
+                    } else {
+                        body.classList.add("dark-mode");
+                        localStorage.setItem("theme", "dark");
+                        themeToggle.innerHTML = "☀️";
+                    }
+                });
+            });
+        </script>
+         
+        
+    
+</body>
+</html>

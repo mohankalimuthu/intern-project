@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated FIR</title>
+    <link rel="stylesheet" href="/dummy2.css">
+</head>
+<body>
+    <header>
+        <div class="navbar header-container">
+            <img src="/Images/police logo.png" alt="Police Logo" style="width:100px;height:100px;">
+            <h1>FIR Generation System</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="generate-container">
+            <div class="generate">
+                <!-- Textarea is now editable -->
+                <textarea id="firDetails" class="input-prompt" placeholder="Generated FIR"></textarea>
+                <br><br><button class="generate-btn" onclick="saveFIR()">Save Changes</button>
+            </div>
+        </section>
+
+        <section class="actions">
+            <br><button class="confirm-btn" onclick="printFIR()">Print</button>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const firData = localStorage.getItem("firData");
+            if (firData) {
+                document.getElementById("firDetails").value = firData;
+            } else {
+                document.getElementById("firDetails").value = "No FIR data available.";
+            }
+        });
+
+        function saveFIR() {
+            const editedText = document.getElementById("firDetails").value;
+            localStorage.setItem("firData", editedText); // Save changes to localStorage
+            alert("Changes saved successfully!");
+        }
+
+        function printFIR() {
+            saveFIR(); // Ensure latest edits are saved before printing
+            window.print();
+        }
+    </script>
+</body>
+</html>

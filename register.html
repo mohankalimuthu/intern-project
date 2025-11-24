@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIR Register</title>
+    <link rel="stylesheet" href="/login.css">
+</head>
+<body>
+    <header>
+        <div class="navbar header-container">
+            <img src="/Images/police_logo-removebg-preview.png" alt="Police Logo" class="logo">
+            <h1>FIR Generation System</h1>
+            <button id="theme-toggle">🌙</button> 
+        </div>
+    </header>
+    <div class="login-container">
+        <h2>Register</h2>
+        <form onsubmit="return validateLogin()">
+            <div class="input-group">
+                <label for="useremail">Email</label>
+                <input type="text" id="useremail" name="useremail" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <div class="input-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="confirm-password" id="confirm-password" placeholder="Confirm your password" required>
+            </div>
+            <div>
+                <!-- <input type="checkbox" id="check" onclick="togglePassword()"> Show Password -->
+           </div>
+           <div class="input-group">
+            <button type="submit">Register Now</button>
+            <p class="register-link">Already have an account? <a href="/login.html" class="register">Login here</a></p>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const themeToggle = document.getElementById("theme-toggle");
+            if (!themeToggle) {
+                console.error("Theme toggle button not found.");
+                return;
+            }
+    
+            const body = document.body;
+            
+            if (localStorage.getItem("theme") === "dark") {
+                body.classList.add("dark-mode");
+                themeToggle.innerHTML = "☀️"; // Sun icon for light mode
+            } else {
+                body.classList.remove("dark-mode");
+                themeToggle.innerHTML = "🌙"; // Moon icon for dark mode
+            }
+    
+            themeToggle.addEventListener("click", function () {
+                if (body.classList.contains("dark-mode")) {
+                    body.classList.remove("dark-mode");
+                    localStorage.setItem("theme", "light");
+                    themeToggle.innerHTML = "🌙";
+                } else {
+                    body.classList.add("dark-mode");
+                    localStorage.setItem("theme", "dark");
+                    themeToggle.innerHTML = "☀️";
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
