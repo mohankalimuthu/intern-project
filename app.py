@@ -4,7 +4,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 # Load Gemini API key
-genai.configure(api_key="AIzaSyA-bvO22mIvxWGKrM_ZTHHCnN52htvsWF0")
+genai.configure(api_key="API key removed")
 
 model = genai.GenerativeModel("gemini-1.5-pro")
 
